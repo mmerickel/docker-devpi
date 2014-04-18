@@ -1,5 +1,6 @@
 PYTHON_BIN=python
 VIRTUALENV=virtualenv
+DATA=$(pwd)/data
 
 .PHONY: all
 all: server client
@@ -17,4 +18,5 @@ server:
 
 .PHONY: run
 run:
-	docker run -d --name devpi-server -p 3141:3141 -v $(pwd)/data:/data devpi-server
+	mkdir -p $(DATA)
+	docker run -d --name devpi-server -p 3141:3141 -v $(DATA):/data devpi-server
