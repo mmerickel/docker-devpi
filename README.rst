@@ -17,13 +17,6 @@ Start the server::
 
   make run
 
-Setup ``pip`` to use the new index::
+Setup ``pip``, ``easy_install`` and ``zc.buildout`` to use the new index::
 
-  echo 'export PIP_INDEX_URL=http://localdocker:3141/root/pypi' > ~/.zshrc
-
-Setup ``easy_install`` to use the new index::
-
-  cat << EOF > ~/.pydistutils.cfg
-  [easy_install]$
-  index-url = http://localdocker:3141/root/pypi
-  EOF
+  make config
