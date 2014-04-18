@@ -17,4 +17,4 @@ server:
 
 .PHONY: run
 run:
-	docker run --rm --name devpi-server -p 3141:3141 -v $(pwd)/data /data devpi-server
+	docker run -d --name devpi-server -p 3141:3141 -v $(pwd)/data:/data devpi-server
