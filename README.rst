@@ -1,5 +1,5 @@
-docker-devpi
-============
+dockerfiles-devpi
+=================
 
 This is a tiny recipe for starting devpi within a docker container.
 
@@ -12,6 +12,10 @@ Usage
 Build the images and setup the client::
 
   make
+
+An alternate docker host would use something like::
+
+  make DOCKER_HOST=tcp://localdocker:4243
 
 Start the server::
 
