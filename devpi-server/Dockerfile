@@ -1,8 +1,9 @@
-FROM ubuntu:12.04
+FROM ubuntu:14.04
 MAINTAINER Michael Merickel <michael@merickel.org>
 
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN apt-get update
 RUN apt-get -y -q install python2.7 python-pip python-virtualenv
 RUN pip install -q -U devpi
 
