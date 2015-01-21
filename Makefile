@@ -32,7 +32,7 @@ server: devpi-server/versions/$(DEVPI_VERSION)/Dockerfile
 .PHONY: run
 run:
 	mkdir -p $(DATA)
-	docker run -d --name devpi_server -p $(DEVPI_PORT):3141 -v $(DATA):/data devpi-server:$(DEVPI_VERSION)
+	docker run -d --restart always --name devpi_server -p $(DEVPI_PORT):3141 -v $(DATA):/data devpi-server:$(DEVPI_VERSION)
 
 .PHONY: config
 config:
