@@ -39,10 +39,12 @@ run:
 config:
 	"$(PYTHON_BIN)" install_config.py "$(DEVPI_URL)"
 
+.PHONY: export
 export:
 	mkdir -p "$(EXPORTDATA)"
 	docker run --rm --volumes-from devpi_server -v "$(EXPORTDATA):/data-dump" devpi-server:$(DEVPI_VERSION) --export /data-dump
 
+.PHONY: import
 import:
 	mkdir -p "$(DATA)"
 	docker run --rm -v "$(DATA):/data" -v "$(EXPORTDATA):/data-import" devpi-server:$(DEVPI_VERSION) --import /data-import
