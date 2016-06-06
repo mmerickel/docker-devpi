@@ -10,7 +10,7 @@ BUILDOUT_CONF=$(HOME)/.buildout/default.cfg
 DEVPI_PORT=3141
 DEVPI_HOST=localdocker
 DEVPI_URL=http://$(DEVPI_HOST):$(DEVPI_PORT)/root/pypi/+simple
-DEVPI_VERSION=2.5.3
+DEVPI_VERSION=4.0.0
 
 .PHONY: all
 all: server client
